@@ -29,32 +29,16 @@ public abstract class BaseService<T> {
         return (M)mapper;
     }
 
-    /**
-     *
-     * @param entity
-     * @return
-     */
 	public int save(T entity) {
         List<T> entityList = new ArrayList<>();
         entityList.add(entity);
         return saveBatch(entityList, false);
     }
 
-    /**
-     *
-     * @param entityCollection
-     * @return
-     */
 	public int saveBatch(Collection<T> entityCollection) {
         return saveBatch(entityCollection, true);
 	}
 
-    /**
-     *
-     * @param entityCollection
-     * @param batch
-     * @return
-     */
     private int saveBatch(Collection<T> entityCollection, boolean batch) {
         if (CollectionUtils.isEmpty(entityCollection)) {
             return 0;

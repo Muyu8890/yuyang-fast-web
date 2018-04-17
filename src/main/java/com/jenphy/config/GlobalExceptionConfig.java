@@ -21,7 +21,7 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 public class GlobalExceptionConfig {
     private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionConfig.class);
 
-    /**
+    /*
      * 处理 BusinessException 异常
      */
     @ExceptionHandler(BusinessException.class)
@@ -32,8 +32,8 @@ public class GlobalExceptionConfig {
         return result;
     }
 
-    /**
-     * 处理 NoHandlerFoundException 异常. <br/>
+    /*
+     * 处理 NoHandlerFoundException 异常.
      * 需配置 [spring.mvc.throw-exception-if-no-handler-found=true]
      * 需配置 [spring.resources.add-mappings=false]
      */
@@ -45,7 +45,7 @@ public class GlobalExceptionConfig {
         return result;
     }
 
-    /**
+    /*
      * 处理 ErrorException 异常
      */
     @ExceptionHandler(ErrorException.class)
@@ -56,7 +56,7 @@ public class GlobalExceptionConfig {
         return result;
     }
 
-    /**
+    /*
      * 处理 Exception 异常
      */
     @ExceptionHandler(Exception.class)
