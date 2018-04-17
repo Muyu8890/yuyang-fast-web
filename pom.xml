@@ -5,7 +5,7 @@
 
 	<groupId>com.github.muyu8890</groupId>
 	<artifactId>yuyang-fast-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<packaging>jar</packaging>
 
 	<name>yuyang-fast-web</name>
