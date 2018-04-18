@@ -16,7 +16,7 @@ import java.util.Map;
  * 基础实体类
  * Created by zhuang on 2018/4/12.
  */
-public class BaseEntity implements Serializable {
+public class BaseEntity<T extends BaseEntity> implements Serializable {
     private static final long serialVersionUID = -4287607489867805101L;
 
     //
@@ -60,11 +60,11 @@ public class BaseEntity implements Serializable {
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+        return ToStringBuilder.reflectionToString((T)this, ToStringStyle.MULTI_LINE_STYLE);
     }
 
     public String toJSONString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+        return ToStringBuilder.reflectionToString((T)this, ToStringStyle.JSON_STYLE);
     }
 
     public String getCreatorId() {
@@ -73,7 +73,7 @@ public class BaseEntity implements Serializable {
 
     public BaseEntity setCreatorId(String creatorId) {
         this.creatorId = creatorId;
-        return this;
+        return (T)this;
     }
 
     public String getCreatorName() {
@@ -82,7 +82,7 @@ public class BaseEntity implements Serializable {
 
     public BaseEntity setCreatorName(String creatorName) {
         this.creatorName = creatorName;
-        return this;
+        return (T)this;
     }
 
     public Date getCreateDate() {
@@ -91,7 +91,7 @@ public class BaseEntity implements Serializable {
 
     public BaseEntity setCreateDate(Date createDate) {
         this.createDate = createDate;
-        return this;
+        return (T)this;
     }
 
     public String getUpdaterId() {
@@ -100,7 +100,7 @@ public class BaseEntity implements Serializable {
 
     public BaseEntity setUpdaterId(String updaterId) {
         this.updaterId = updaterId;
-        return this;
+        return (T)this;
     }
 
     public String getUpdaterName() {
@@ -109,7 +109,7 @@ public class BaseEntity implements Serializable {
 
     public BaseEntity setUpdaterName(String updaterName) {
         this.updaterName = updaterName;
-        return this;
+        return (T)this;
     }
 
     public Date getUpdateDate() {
@@ -118,7 +118,7 @@ public class BaseEntity implements Serializable {
 
     public BaseEntity setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
-        return this;
+        return (T)this;
     }
 
 }
